@@ -5,6 +5,7 @@
         <title>Login</title>
         <link rel="prefetch" href="/Resources/Images/Parking1.jpg">
         <link rel="stylesheet" href="/Resources/css/custom.css">
+        <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
         <script type="module" src="/ViewModels/login.js"></script>
     </head>
     <body>
@@ -12,7 +13,7 @@
             <div class="row center-box">
                 <div class="col-4 bg-green text-center p-4">
                     <h1>Login</h1>
-                    <form>
+                    <div>
                         <div class="form-floating mt-3">
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
@@ -21,10 +22,13 @@
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
-                            <div class="col-12 mt-3">
-                            <button class="btn btn-primary" type="submit">Login</button>
+                        <div class="mt-2">
+                            <p>Don't have an account? <a href="/register.html">Register now!</a></p>
                         </div>
-                    </form>
+                        <div class="col-12 mt-3">
+                            <button class="btn btn-primary" type="button">Login</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

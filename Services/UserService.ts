@@ -1,5 +1,5 @@
-import { User } from "../Model/User"
-import { UserRepo } from "../Repositories/UserRepo"
+import { User } from "../Model/User.js"
+import { UserRepo } from "../Repositories/UserRepo.js"
 
 export class UserService {
     #userRepo : UserRepo
@@ -18,6 +18,9 @@ export class UserService {
     }
     getUser(user : User) : User | null {
         return this.#userRepo.findById(user.id?? -1);
+    }
+    getUserById(id : Number) : User | null {
+        return this.#userRepo.findById(id);
     }
     getAllClients() : Array<User> {
         return this.#userRepo.findAllByType("client");

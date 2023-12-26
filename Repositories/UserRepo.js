@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserRepo = void 0;
-const User_js_1 = require("../Model/User.js");
-class UserRepo {
+import { User } from "../Model/User.js";
+export class UserRepo {
     #userdb;
     constructor() {
         this.#userdb = [];
@@ -18,7 +15,7 @@ class UserRepo {
         var jsondb = JSON.parse(db);
         this.#userdb = [];
         for (var line of jsondb) {
-            this.#userdb.push(new User_js_1.User(line.id, line.email, line.password, line.name, line.address, line.type));
+            this.#userdb.push(new User(line.id, line.email, line.password, line.name, line.address, line.type));
         }
     }
     #savels() {
@@ -70,4 +67,3 @@ class UserRepo {
         return u[0];
     }
 }
-exports.UserRepo = UserRepo;

@@ -1,5 +1,6 @@
 import { User } from "../Model/User.js";
 import { UserService } from "../Services/UserService.js";
+
 $().ready(function () {
     const userService = new UserService();
     $("button").on("click", function () {
@@ -9,10 +10,9 @@ $().ready(function () {
         var loggedUser = userService.loginUser(user);
         if (loggedUser != null) {
             sessionStorage.setItem("logged", String(loggedUser.id));
-            location.href = '/index.html';
+            location.href = '/index.html'
+        } else {
+            location.href = '/login.html?error'
         }
-        else {
-            location.href = '/login.html?error';
-        }
-    });
-});
+    })
+})

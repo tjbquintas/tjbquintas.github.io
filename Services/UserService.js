@@ -1,10 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const UserRepo_1 = require("../Repositories/UserRepo");
-class UserService {
+import { UserRepo } from "../Repositories/UserRepo.js";
+export class UserService {
     #userRepo;
     constructor() {
-        this.#userRepo = new UserRepo_1.UserRepo();
+        this.#userRepo = new UserRepo();
     }
     createUser(user) {
         if (this.isEmailAvailable(user.email ?? ""))
@@ -20,6 +18,9 @@ class UserService {
     getUser(user) {
         return this.#userRepo.findById(user.id ?? -1);
     }
+    getUserById(id) {
+        return this.#userRepo.findById(id);
+    }
     getAllClients() {
         return this.#userRepo.findAllByType("client");
     }
@@ -33,5 +34,4 @@ class UserService {
         return this.#userRepo.findByEmailAndPassword(user.email ?? "", user.password ?? "");
     }
 }
-exports.default = UserService;
 ;
