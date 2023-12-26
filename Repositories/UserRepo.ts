@@ -1,4 +1,4 @@
-import "/Model/User"
+import User from "../Model/User.js";
 
 class UserRepo {
     #userdb : Array<User>;
@@ -58,3 +58,5 @@ class UserRepo {
         return this.#userdb.filter(user => user.type === type);
     }
 }
+
+export default UserRepo;
