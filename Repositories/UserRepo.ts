@@ -1,14 +1,14 @@
-import User from "../Model/User.js";
+import { User } from "../Model/User.js";
 
-class UserRepo {
+export class UserRepo {
     #userdb : Array<User>;
     constructor() {
+        this.#userdb = []
         var db = localStorage.getItem("users");
         if (db != null) {
             this.#parseDB(db);
         } else {
             localStorage.setItem("users", "[]");
-            this.#userdb = []
         }
     }
     #parseDB(db : string) {
@@ -28,7 +28,7 @@ class UserRepo {
         return user;
     }
     update(user : User) : User {
-        var u = this.findById(user.id);
+        var u = this.findById(user.id?? -1);
         if (u == null) return this.create(user);
         else {
             u.name = user.name;
@@ -57,6 +57,9 @@ class UserRepo {
     findAllByType(type : string) : Array<User> {
         return this.#userdb.filter(user => user.type === type);
     }
+    findByEmail(email : string) : User | null {
+        var u = this.#userdb.filter(user => user.email === email);
+        if (u.length === 0) return null;
+        return u[0];
+    }
 }
-
-export default UserRepo;
