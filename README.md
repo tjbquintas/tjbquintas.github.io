@@ -1,7 +1,7 @@
 # MyPark
-### Aplicação de reserva e registo de parques de estacionamento, criada pela MultiPark
+## Aplicação de reserva e registo de parques de estacionamento, criada pela MultiPark
 
-#### Utilizar a aplicação como cliente
+### Utilizar a aplicação como cliente
 
 Para utilizar a aplicação primeiro registe-se como cliente. Adicione um email e uma palavra-passe, assim como os restantes dados.
 
@@ -11,7 +11,7 @@ De seguida, clique no Glicínias Plaza para reservar um lugar de estacionamento.
 
 Escolha o piso e o lugar, e por último o carro com que pretende fazer a reserva.
 
-#### Utilizar a aplicação como empresa
+### Utilizar a aplicação como empresa
 
 Entre na página de login e entre com as credenciais:
  - parques@plaza.pt
