@@ -2,39 +2,88 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Login</title>
+        <title>MyPark</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="prefetch" href="/Resources/Images/Parking1.jpg">
         <link rel="stylesheet" href="/Resources/css/custom.css">
+        <link rel="stylesheet" href="/Resources/lib/fa/css/all.min.css">
         <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
         <script type="module" src="/ViewModels/index.js"></script>
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
-              <a class="navbar-brand" href="#">MyPark</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                </ul>
-                <span class="navbar-text">
-                    <a class="nav-link" id="user" href="/profile.html"></a>
-                </span>
+    <body class="bg-body-tertiary">
+      <nav class="navbar fixed-top navbar-expand-lg bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">MyPark</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <span class="navbar-text">
+              <a class="nav-link" id="user" href="#"></a>
+          </span>
+        </div>
+      </nav>
+      <div class="container | main">
+        <div class="row justify-content-center">
+          <div class="col-3">
+            <div class="row options-bar">
+              <div class="col-11 card p-3 mb-3">
+                <h5 class="ps-3"><i class="fa fa-car"></i> My cars</h5>
+                <div class="list-group list-group-flush">
+                  <a href="#" class="list-group-item list-group-item-action">
+                    Toyota Corola 2006, 42-11-AE
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action">
+                    Citröen ZX 1991, 45-36-GA
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-plus"></i> Add new car</a>
+                </div>
+              </div>
+              <div class="col-11 card p-3 mb-3">
+                <h5 class="ps-3">My cars</h5>
+                <div class="list-group list-group-flush">
+                  <a href="#" class="list-group-item list-group-item-action">
+                    
+                  </a>
+                  
+                </div>
               </div>
             </div>
-          </nav>
-        <div class="container h-100">
-            
+          </div>
+          <div class="col-4">
+            <div class="row search-bar">
+              <div class="col-11">
+                <div class="input-group">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                  <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon1">
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3" id="park_list">
+              <div class="row mt-3">
+                <div class="col-11 card park">
+                  <button type="button" class="btn fav-icon"><i class="fa fa-heart"></i></button>
+                  <img src="Resources/Images/glici.jpg" />
+                  <div class="row p-3">
+                    <div class="col-auto">
+                      <h2>Glicínias Plaza</h2>
+                      <h4>Aveiro, Aveiro</h4>
+                    </div>
+                    <div class="col text-end">
+                      <p class="mt-3">Lotação<br>73/250</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <nav class="navbar fixed-bottom bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">MAS 2023</a>
+        </div>
+      </nav>
     </body>
 </html>
+
+

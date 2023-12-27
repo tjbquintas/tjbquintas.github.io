@@ -47,6 +47,9 @@ export class ParkRepo {
         }
         return null;
     }
+    findAll() : Array<Park> {
+        return this.#parkdb;
+    }
     findByName(name : string) : Park | null {
         for (var park of this.#parkdb) {
             if (park.name === name) return park;

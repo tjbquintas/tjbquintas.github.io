@@ -18,6 +18,9 @@ export class ParkService {
     getPark(park : Park) : Park | null {
         return this.#parkRepo.findById(park.id?? -1);
     }
+    getAllParks() {
+        return this.#parkRepo.findAll();
+    }
     getParkById(id : Number) : Park | null {
         return this.#parkRepo.findById(id);
     }

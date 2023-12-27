@@ -3,6 +3,7 @@
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../lib/bootstrap/scss/functions";
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
 /* Color Theme Swatches in Hex */
 $color-theme_Parking1-1-hex: #172601;
@@ -14,10 +15,13 @@ $color-theme_Parking1-5-hex: #A6978A;
 $primary: $color-theme_Parking1-3-hex;
 $secondary: $color-theme_Parking1-4-hex;
 $dark: $color-theme_Parking1-1-hex;
-$body-bg-tertiary: $color-theme_Parking1-5-hex;
-$light: $color-theme_Parking1-5-hex;
+$tertiary: $color-theme_Parking1-5-hex;
+$light: #f8f9fa;
 $darker: #12110f;
 $body-bg: $light;
+
+$font-family-base: 'Lato';
+$font-size-base: 1rem;
 
 $grid-gutter-width: 0;
 
@@ -25,7 +29,7 @@ $green: $color-theme_Parking1-2-hex;
 
 $custom-colors: (
   "green": $green,
-  "tertiary": $color-theme_Parking1-5-hex
+  "tertiary": $tertiary
 );
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
@@ -76,25 +80,74 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../lib/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
-body {
+
+.bg-img {
   background-image: url("/Resources/Images/Parking1.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: fixed;
+  filter: blur(10px);
 }
 
-.h-100 {
-  height: 100%;
+.navbar-brand {
+  font-weight: bold;
 }
 
 .center-box {
   height: 100%;
   display: flex;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
+  flex-direction: row;
 }
 
 .center-box > div {
   border-radius: .75rem;
   box-shadow: 0px 0px 15px $dark;
+}
+
+.card {
+  border-radius: .75rem;
+  box-shadow: 0px 0px 12px $dark;
+}
+
+.card.park {
+  height: 220px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card > img {
+  height: 50%;
+  object-fit: cover;
+}
+
+.search-bar, .options-bar {
+  position: sticky;
+  inset: 76px;
+  z-index: 10;
+}
+
+.main {
+  margin-block: 76px;
+}
+
+.fav-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  font-size: 1.25rem;
+  color: $light;
+}
+
+.fav-icon:is(:hover, :focus, :focus-visible, :active, :focus-within) {
+  border: none;
+  color: $light !important;
 }
