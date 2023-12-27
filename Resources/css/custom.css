@@ -12143,20 +12143,49 @@ h5, .h5 {
   background-color: transparent;
 }
 
-.spot.free {
+.spot.free, .spot.m-free {
   border: 1px solid #7D8C46;
   transition: all 0.2s;
 }
 
-.spot.free:hover, .spot.free.selected {
+.spot.free:hover, .spot.free.selected, .spot.m-reserv {
   border: 1px solid #f8f9fa;
   background-color: #7D8C46;
   color: #f8f9fa;
 }
 
 .spot.taken {
-  border: 1px solid black;
+  border: 1px solid #12110f;
   background-color: #8C4303;
+}
+
+.spot.hollow {
+  border: 1px solid #12110f;
+}
+
+.spot.hollow:hover {
+  background-color: #172601;
+}
+
+.spot.filled {
+  background-color: #7D8C46;
+}
+
+.spot.m-occ {
+  background-color: #F2A413;
+}
+
+.spot.m-lowfee {
+  background-color: #8C4303;
+}
+
+.spot.m-highfee {
+  background-color: #dc3545;
+}
+
+.spot.m-maintenance {
+  background-color: #12110f;
+  color: #f8f9fa;
 }
 
 .reservation {

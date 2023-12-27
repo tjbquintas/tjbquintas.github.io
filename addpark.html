@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>MyPark</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="prefetch" href="/Resources/Images/Parking1.jpg">
+        <link rel="stylesheet" href="/Resources/css/custom.css">
+        <link rel="stylesheet" href="/Resources/lib/fa/css/all.min.css">
+        <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
+        <script type="module" src="/ViewModels/addpark.js"></script>
+        <script src="/Resources/lib/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg bg-primary">
+            <div class="container">
+            <a class="navbar-brand" href="/index.html">MyPark</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-text">
+                <a class="nav-link" id="user" href="/login.html"></a>
+            </span>
+            </div>
+        </nav>
+        <div class="container | main">
+            <div class="row justify-content-center">
+                <div class="col-6 card p-3">
+                    <h2 class="ps-2"><i class="fa fa-square-parking"></i> Add New Park</h2>
+                    <div class="row">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                            <label for="nameInput">Name</label>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div class="col form-floating me-1">
+                                <input type="text" class="form-control" id="addressInput" placeholder="Address">
+                                <label for="addressInput">Address</label>
+                            </div>
+                            <div class="col form-floating ms-1">
+                                <input type="text" class="form-control" id="imageInput" placeholder="Image">
+                                <label for="imageInput">Image</label>
+                            </div>
+                        </div>
+                        <div class="row mt-3 justify-content-center">
+                            <div class="col-12 card bg-tertiary p-3">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link add-floor"><i class="fa fa-plus"></i> Add Floor</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-2"></div>
+                            </div>
+                        </div>
+                        <div class="col-10 mt-3">
+                            <button id="add_park" class="btn btn-primary" type="button">Add Park</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar fixed-bottom bg-primary">
+            <div class="container">
+            <a class="navbar-brand" href="#">MAS 2023</a>
+            </div>
+        </nav>
+    </body>
+</html>

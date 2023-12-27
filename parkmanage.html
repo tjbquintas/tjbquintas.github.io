@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="/Resources/css/custom.css">
         <link rel="stylesheet" href="/Resources/lib/fa/css/all.min.css">
         <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
-        <script type="module" src="/ViewModels/park.js"></script>
-        <script src="/Resources/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="module" src="/ViewModels/parkmanage.js"></script>
+        <script src="/Resources/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
       <nav class="navbar fixed-top navbar-expand-lg bg-primary">
@@ -26,33 +26,31 @@
       <div class="container | main">
         <div class="row justify-content-center">
             <div class="col-6 card park-2"></div>
-            <div class="col-1 ms-3 d-flex align-items-center">
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Make a reservation</button>
+            <div class="col-1 ms-3 d-flex flex-column justify-content-center gap-2">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal">Incomes</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal">Stats</button>
             </div>
         </div>
         <div class="row mt-3 justify-content-center">
             <div class="col-8 card bg-tertiary p-3">
-                <span class="reservation p-3">No parking spot selected</span>
                 <ul class="nav nav-tabs"></ul>
                 <div class="tab-content mt-2"></div>
             </div>
         </div>
       </div>
-        <!-- BookingModal -->
-        <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <!-- Modal -->
+        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="bookingModalLabel">Make Reservation</h1>
+                        <h1 class="modal-title fs-5" id="ModalLabel"></h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p class="confirm">No parking spot selected...</p>
-                        <div class="car-list"></div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button id="booking" type="button" class="btn btn-primary" disabled>Book</button>
                     </div>
                 </div>
             </div>

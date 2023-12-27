@@ -25,7 +25,7 @@ $().ready(function () {
             const all_my_parks : Park[] = parkService.getAllParksByUserId(loggedUser.id ?? -1);
             for (const p of all_my_parks) {
                 var a = document.createElement("a");
-                a.href = `/park_management.html?id=${p.id}`;
+                a.href = `/parkmanage.html?id=${p.id}`;
                 a.classList.add("list-group-item", "list-group-item-active");
                 a.innerHTML = `${p.name}, ${p.address}`;
                 my_parks_list.prepend(a);

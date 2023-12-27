@@ -185,20 +185,49 @@ h5 {
   background-color: transparent;
 }
 
-.spot.free {
+.spot.free, .spot.m-free {
   border: 1px solid $green;
   transition: all .2s;
 }
 
-.spot.free:hover, .spot.free.selected {
+.spot.free:hover, .spot.free.selected, .spot.m-reserv {
   border: 1px solid $light;
   background-color: $green;
   color: $light;
 }
 
 .spot.taken {
-  border: 1px solid black;
+  border: 1px solid $darker;
   background-color: $secondary;
+}
+
+.spot.hollow {
+  border: 1px solid $darker;
+}
+
+.spot.hollow:hover {
+  background-color: $dark;
+}
+
+.spot.filled {
+  background-color: $green;
+}
+
+.spot.m-occ {
+  background-color: $primary;
+}
+
+.spot.m-lowfee {
+  background-color: $secondary;
+}
+
+.spot.m-highfee {
+  background-color: $danger;
+}
+
+.spot.m-maintenance {
+  background-color: $darker;
+  color: $light;
 }
 
 .reservation {

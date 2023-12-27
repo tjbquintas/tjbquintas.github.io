@@ -63,7 +63,7 @@ export class ReservationService {
         if (car == null || !car.has_reserv) return null;
         reservation.state = Spot.EXPIRED;
         var res = this.#reservationRepo.update(reservation);
-        park.changeSpot(res.floor ?? "", res.spot ?? -1, Spot.FREE, res.id ?? -1);
+        park.changeSpot(res.floor ?? "", res.spot ?? -1, Spot.FREE, -1);
         this.#parkService.updatePark(park);
         car.has_reserv = false;
         this.#carService.updateCar(car);
