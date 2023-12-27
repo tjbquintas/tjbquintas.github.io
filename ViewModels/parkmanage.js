@@ -64,8 +64,9 @@ $().ready(function () {
                         "m-lowfee" : col.state == Spot.HEAVY_FEE ?
                         "m-highfee" : "m-maintenance";
                     spot.classList.add(exclass);
-                    var html = "";
                     if (col.state != Spot.EMPTY) {
+                        var html = `<p class="text-start">${SpotRecord[col.state]}<br>
+                        Floor ${floor}, Spot ${col.id}</p>`;
                         spot.innerHTML = String(col.id);
                         var res = reservationService.getReservationById(col.res_id);
                         if (res != null) {
@@ -79,10 +80,6 @@ $().ready(function () {
                                                 ${car.brand} ${car.year}, ${car.plate}</p>`;
                                 }
                             }
-                        }
-                        else {
-                            html = `<p class="text-start">${SpotRecord[col.state]}<br>
-                            Floor ${floor}, Spot ${col.id}</p>`;
                         }
                         spot.setAttribute("data-bs-toggle", "tooltip");
                         spot.setAttribute("data-bs-html", "true");

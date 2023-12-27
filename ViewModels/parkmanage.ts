@@ -68,12 +68,13 @@ $().ready(function () {
                      "m-lowfee" : col.state == Spot.HEAVY_FEE ?
                      "m-highfee" : "m-maintenance";
                     spot.classList.add(exclass);
-                    var html : string = "";
                     if (col.state != Spot.EMPTY) {
+                        var html : string = `<p class="text-start">${SpotRecord[col.state]}<br>
+                        Floor ${floor}, Spot ${col.id}</p>`;
                         spot.innerHTML = String(col.id);
-                        var res = reservationService.getReservationById(col.res_id);
+                        var res : Reservation | null = reservationService.getReservationById(col.res_id);
                         if (res != null) {
-                            var car = carService.getCarById(res.car_id ?? -1);
+                            var car : Car | null = carService.getCarById(res.car_id ?? -1);
                             if (car != null) {
                                 var user = userService.getUserById(car.user_id ?? -1);
                                 if (user != null) {
@@ -83,9 +84,6 @@ $().ready(function () {
                                                 ${car.brand} ${car.year}, ${car.plate}</p>`;
                                 }
                             }
-                        } else {
-                            html = `<p class="text-start">${SpotRecord[col.state]}<br>
-                            Floor ${floor}, Spot ${col.id}</p>`
                         }
                         spot.setAttribute("data-bs-toggle", "tooltip");
                         spot.setAttribute("data-bs-html", "true");
