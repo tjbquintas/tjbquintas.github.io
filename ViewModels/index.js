@@ -9,4 +9,7 @@ $().ready(function () {
     else {
         $("#user").text(loggedUser.name ?? "");
     }
+    $(".park").on("click", function () {
+        location.href = "/park.html?id=" + $(this).attr("name");
+    });
 });

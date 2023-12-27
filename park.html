@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>MyPark</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="prefetch" href="/Resources/Images/Parking1.jpg">
+        <link rel="stylesheet" href="/Resources/css/custom.css">
+        <link rel="stylesheet" href="/Resources/lib/fa/css/all.min.css">
+        <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
+        <script type="module" src="/ViewModels/park.js"></script>
+        <script src="/Resources/lib/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+      <nav class="navbar fixed-top navbar-expand-lg bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">MyPark</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <span class="navbar-text">
+              <a class="nav-link" id="user" href="#"></a>
+          </span>
+        </div>
+      </nav>
+      <div class="container | main">
+        <div class="row justify-content-center">
+            <div class="col-6 card park-2">
+                <div class="row">
+                    <div class="col-3 overflow-hidden d-flex justify-content-center">
+                        <img src="Resources/Images/glici.jpg" />
+                    </div>
+                    <div class="col-auto ms-1 p-2">
+                        <h2>Glicínias Plaza</h2>
+                        <h4>Aveiro, Aveiro</h4>
+                    </div>
+                    <div class="col text-end p-2">
+                        <p class="mt-3">Capacity<br>73/250</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 ms-3 d-flex align-items-center">
+                <button type="button" class="btn btn-outline-primary">Make a reservation</button>
+            </div>
+        </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-8 card bg-tertiary p-3">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#park-2" data-bs-toggle="tab">-2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#park-1" data-bs-toggle="tab">-1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#park0" data-bs-toggle="tab">0</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="park-2">
+                        <div class="justify-content-center parking-lot">
+                        
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="park-1">
+                        <div class="justify-content-center parking-lot">
+                        
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="park0">
+                        <div class="justify-content-center parking-lot">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <nav class="navbar fixed-bottom bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">MAS 2023</a>
+        </div>
+      </nav>
+    </body>
+</html>
+</html>

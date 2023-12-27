@@ -123,8 +123,18 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   cursor: pointer;
 }
 
+.card.park-2 {
+  height: 100px;
+  overflow: hidden;
+}
+
 .card > img {
   height: 50%;
+  object-fit: cover;
+}
+
+.card > div img {
+  height: 100px;
   object-fit: cover;
 }
 
@@ -150,4 +160,31 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 .fav-icon:is(:hover, :focus, :focus-visible, :active, :focus-within) {
   border: none;
   color: $light !important;
+}
+
+h5 {
+  color: $secondary;
+}
+
+.parking-lot {
+  display: grid;
+  grid-template-rows: repeat(var(--park-rows, 20), 25px);
+  grid-template-columns: repeat(var(--park-cols, 25), 25px);
+  grid-gap: 2px;
+}
+
+.spot {
+  font-size: .25rem;
+  width: 25px;
+  aspect-ratio: 1;
+  background-color: transparent;
+}
+
+.spot.free {
+  border: 1px solid $green;
+}
+
+.spot.taken {
+  border: 1px solid black;
+  background-color: $secondary;
 }

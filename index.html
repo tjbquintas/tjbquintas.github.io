@@ -9,11 +9,12 @@
         <link rel="stylesheet" href="/Resources/lib/fa/css/all.min.css">
         <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
         <script type="module" src="/ViewModels/index.js"></script>
+        <script src="/Resources/lib/bootstrap/js/bootstrap.min.js"></script>
     </head>
-    <body class="bg-body-tertiary">
+    <body>
       <nav class="navbar fixed-top navbar-expand-lg bg-primary">
         <div class="container">
-          <a class="navbar-brand" href="#">MyPark</a>
+          <a class="navbar-brand" href="/index.html">MyPark</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,7 +40,16 @@
                 </div>
               </div>
               <div class="col-11 card p-3 mb-3">
-                <h5 class="ps-3">My cars</h5>
+                <h5 class="ps-3"><i class="far fa-calendar"></i> Active Reservations</h5>
+                <div class="list-group list-group-flush">
+                  <a href="#" class="list-group-item list-group-item-action">
+                    
+                  </a>
+                  
+                </div>
+              </div>
+              <div class="col-11 card p-3 mb-3">
+                <h5 class="ps-3"><i class="fa fa-credit-card-alt"></i> Pending Payments</h5>
                 <div class="list-group list-group-flush">
                   <a href="#" class="list-group-item list-group-item-action">
                     
@@ -60,8 +70,8 @@
             </div>
             <div class="row mt-3" id="park_list">
               <div class="row mt-3">
-                <div class="col-11 card park">
-                  <button type="button" class="btn fav-icon"><i class="fa fa-heart"></i></button>
+                <div class="col-11 card park" name="0">
+                  <button type="button" class="btn fav-icon"><i class="far fa-heart"></i></button>
                   <img src="Resources/Images/glici.jpg" />
                   <div class="row p-3">
                     <div class="col-auto">
@@ -69,7 +79,7 @@
                       <h4>Aveiro, Aveiro</h4>
                     </div>
                     <div class="col text-end">
-                      <p class="mt-3">Lotação<br>73/250</p>
+                      <p class="mt-3">Capacity<br>73/250</p>
                     </div>
                   </div>
                 </div>

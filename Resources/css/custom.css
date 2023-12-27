@@ -12082,8 +12082,18 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 
+.card.park-2 {
+  height: 100px;
+  overflow: hidden;
+}
+
 .card > img {
   height: 50%;
+  object-fit: cover;
+}
+
+.card > div img {
+  height: 100px;
   object-fit: cover;
 }
 
@@ -12109,6 +12119,33 @@ textarea.form-control-lg {
 .fav-icon:is(:hover, :focus, :focus-visible, :active, :focus-within) {
   border: none;
   color: #f8f9fa !important;
+}
+
+h5, .h5 {
+  color: #8C4303;
+}
+
+.parking-lot {
+  display: grid;
+  grid-template-rows: repeat(var(--park-rows, 20), 25px);
+  grid-template-columns: repeat(var(--park-cols, 25), 25px);
+  grid-gap: 2px;
+}
+
+.spot {
+  font-size: 0.25rem;
+  width: 25px;
+  aspect-ratio: 1;
+  background-color: transparent;
+}
+
+.spot.free {
+  border: 1px solid #7D8C46;
+}
+
+.spot.taken {
+  border: 1px solid black;
+  background-color: #8C4303;
 }
 
 /*# sourceMappingURL=custom.css.map */

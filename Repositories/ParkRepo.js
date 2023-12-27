@@ -50,6 +50,9 @@ export class ParkRepo {
         }
         return null;
     }
+    findAll() {
+        return this.#parkdb;
+    }
     findByName(name) {
         for (var park of this.#parkdb) {
             if (park.name === name)
