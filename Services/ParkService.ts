@@ -21,10 +21,13 @@ export class ParkService {
     getAllParks() {
         return this.#parkRepo.findAll();
     }
-    getParkById(id : Number) : Park | null {
+    getParkById(id : number) : Park | null {
         return this.#parkRepo.findById(id);
     }
-    getAllParksByUserId(user_id : Number) : Array<Park> {
+    getParkByName(name : string) : Park | null {
+        return this.#parkRepo.findByName(name);
+    }
+    getAllParksByUserId(user_id : number) : Array<Park> {
         return this.#parkRepo.findAllByUserId(user_id);
     }
 };

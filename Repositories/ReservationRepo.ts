@@ -42,7 +42,7 @@ export class ReservationRepo {
     delete(reservation : Reservation) : void {
         this.#reservationdb = this.#reservationdb.filter(p => p.id !== reservation.id);
     }
-    findById(id : Number) : Reservation | null {
+    findById(id : number) : Reservation | null {
         for (var reservation of this.#reservationdb) {
             if (reservation.id === id) return reservation;
         }
@@ -51,10 +51,10 @@ export class ReservationRepo {
     findAll() : Array<Reservation> {
         return this.#reservationdb;
     }
-    findAllByCarId(car_id : Number) : Array<Reservation> {
+    findAllByCarId(car_id : number) : Array<Reservation> {
         return this.#reservationdb.filter(reservation => reservation.car_id === car_id);
     }
-    findAllByParkId(park_id : Number) : Array<Reservation> {
+    findAllByParkId(park_id : number) : Array<Reservation> {
         return this.#reservationdb.filter(reservation => reservation.park_id === park_id);
     }
 }

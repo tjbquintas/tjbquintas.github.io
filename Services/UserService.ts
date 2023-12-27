@@ -19,7 +19,7 @@ export class UserService {
     getUser(user : User) : User | null {
         return this.#userRepo.findById(user.id?? -1);
     }
-    getUserById(id : Number) : User | null {
+    getUserById(id : number) : User | null {
         return this.#userRepo.findById(id);
     }
     getAllClients() : Array<User> {
@@ -28,7 +28,7 @@ export class UserService {
     getAllCompanies() : Array<User> {
         return this.#userRepo.findAllByType("company");
     }
-    isEmailAvailable(email : string) {
+    isEmailAvailable(email : string) : boolean {
         return this.#userRepo.findByEmail(email) == null;
     }
     loginUser(user : User) : User | null {

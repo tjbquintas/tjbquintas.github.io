@@ -19,63 +19,44 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <span class="navbar-text">
-              <a class="nav-link" id="user" href="#"></a>
+            <a class="nav-link" id="user" href="/login.html"></a>
           </span>
         </div>
       </nav>
       <div class="container | main">
         <div class="row justify-content-center">
-            <div class="col-6 card park-2">
-                <div class="row">
-                    <div class="col-3 overflow-hidden d-flex justify-content-center">
-                        <img src="Resources/Images/glici.jpg" />
-                    </div>
-                    <div class="col-auto ms-1 p-2">
-                        <h2>Glicínias Plaza</h2>
-                        <h4>Aveiro, Aveiro</h4>
-                    </div>
-                    <div class="col text-end p-2">
-                        <p class="mt-3">Capacity<br>73/250</p>
-                    </div>
-                </div>
-            </div>
+            <div class="col-6 card park-2"></div>
             <div class="col-1 ms-3 d-flex align-items-center">
-                <button type="button" class="btn btn-outline-primary">Make a reservation</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Make a reservation</button>
             </div>
         </div>
         <div class="row mt-3 justify-content-center">
             <div class="col-8 card bg-tertiary p-3">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#park-2" data-bs-toggle="tab">-2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#park-1" data-bs-toggle="tab">-1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#park0" data-bs-toggle="tab">0</a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane fade active show" id="park-2">
-                        <div class="justify-content-center parking-lot">
-                        
-                        </div>
+                <span class="reservation p-3">No parking spot selected</span>
+                <ul class="nav nav-tabs"></ul>
+                <div class="tab-content mt-2"></div>
+            </div>
+        </div>
+      </div>
+        <!-- BookingModal -->
+        <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="bookingModalLabel">Make Reservation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="tab-pane fade" id="park-1">
-                        <div class="justify-content-center parking-lot">
-                        
-                        </div>
+                    <div class="modal-body">
+                        <p class="confirm">No parking spot selected...</p>
+                        <div class="car-list"></div>
                     </div>
-                    <div class="tab-pane fade" id="park0">
-                        <div class="justify-content-center parking-lot">
-                        
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="booking" type="button" class="btn btn-primary" disabled>Book</button>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
       <nav class="navbar fixed-bottom bg-primary">
         <div class="container">
           <a class="navbar-brand" href="#">MAS 2023</a>

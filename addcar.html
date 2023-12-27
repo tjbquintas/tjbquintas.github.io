@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>MyPark</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="prefetch" href="/Resources/Images/Parking1.jpg">
+        <link rel="stylesheet" href="/Resources/css/custom.css">
+        <link rel="stylesheet" href="/Resources/lib/fa/css/all.min.css">
+        <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
+        <script type="module" src="/ViewModels/addcar.js"></script>
+        <script src="/Resources/lib/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg bg-primary">
+            <div class="container">
+            <a class="navbar-brand" href="/index.html">MyPark</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-text">
+                <a class="nav-link" id="user" href="/login.html"></a>
+            </span>
+            </div>
+        </nav>
+        <div class="container | main">
+            <div class="row justify-content-center">
+                <div class="col-6 card p-3">
+                    <h2 class="ps-2"><i class="fa fa-car"></i> Add New Car</h2>
+                    <div class="row">
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" id="brandInput" placeholder="Brand">
+                            <label for="brandInput">Brand</label>
+                        </div>
+                        <div class="form-floating mt-3">
+                            <input type="text" class="form-control" id="plateInput" placeholder="License Plate">
+                            <label for="plateInput">License Plate</label>
+                        </div>
+                        <div class="form-floating mt-3">
+                            <input type="number" class="form-control" id="yearInput" placeholder="Year">
+                            <label for="yearInput">Year</label>
+                        </div>
+                        <div class="col-10 mt-3">
+                            <button id="add_car" class="btn btn-primary" type="button">Add Car</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar fixed-bottom bg-primary">
+            <div class="container">
+            <a class="navbar-brand" href="#">MAS 2023</a>
+            </div>
+        </nav>
+    </body>
+</html>

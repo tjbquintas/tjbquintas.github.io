@@ -1,8 +1,9 @@
 export enum Spot {
-    EMPTY = -1,
+    EMPTY = -2,
+    EXPIRED,
     FREE,
     BOOKED,
     OCCUPIED,
     LOW_FEE,
-    HEAVY_FEE
+    HEAVY_FEE,
 }

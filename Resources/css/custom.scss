@@ -10,7 +10,7 @@ $color-theme_Parking1-1-hex: #172601;
 $color-theme_Parking1-2-hex: #7D8C46;
 $color-theme_Parking1-3-hex: #F2A413;
 $color-theme_Parking1-4-hex: #8C4303;
-$color-theme_Parking1-5-hex: #A6978A;
+$color-theme_Parking1-5-hex: #c4b5a7;
 
 $primary: $color-theme_Parking1-3-hex;
 $secondary: $color-theme_Parking1-4-hex;
@@ -19,6 +19,7 @@ $tertiary: $color-theme_Parking1-5-hex;
 $light: #f8f9fa;
 $darker: #12110f;
 $body-bg: $light;
+$nav-link-color: $secondary;
 
 $font-family-base: 'Lato';
 $font-size-base: 1rem;
@@ -148,6 +149,10 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   margin-block: 76px;
 }
 
+.initial {
+  height: 100vh;
+}
+
 .fav-icon {
   position: absolute;
   top: 0;
@@ -182,9 +187,23 @@ h5 {
 
 .spot.free {
   border: 1px solid $green;
+  transition: all .2s;
+}
+
+.spot.free:hover, .spot.free.selected {
+  border: 1px solid $light;
+  background-color: $green;
+  color: $light;
 }
 
 .spot.taken {
   border: 1px solid black;
   background-color: $secondary;
+}
+
+.reservation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: larger;
 }

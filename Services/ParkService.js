@@ -22,6 +22,9 @@ export class ParkService {
     getParkById(id) {
         return this.#parkRepo.findById(id);
     }
+    getParkByName(name) {
+        return this.#parkRepo.findByName(name);
+    }
     getAllParksByUserId(user_id) {
         return this.#parkRepo.findAllByUserId(user_id);
     }

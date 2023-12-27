@@ -43,7 +43,7 @@ export class UserRepo {
     delete(user : User) : void {
         this.#userdb = this.#userdb.filter(u => u.id !== user.id);
     }
-    findById(id: Number) : User | null {
+    findById(id: number) : User | null {
         for (var user of this.#userdb) {
             if (user.id === id) return user;
         }

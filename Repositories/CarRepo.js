@@ -15,7 +15,7 @@ export class CarRepo {
         var jsondb = JSON.parse(db);
         this.#cardb = [];
         for (var line of jsondb) {
-            this.#cardb.push(new Car(line.id, line.plate, line.brand, line.year, line.user_id));
+            this.#cardb.push(new Car(line.id, line.plate, line.brand, line.year, line.user_id, line.has_reserv));
         }
     }
     #savels() {
@@ -36,6 +36,7 @@ export class CarRepo {
             p.year = car.year;
             p.plate = car.plate;
             p.user_id = car.user_id;
+            p.has_reserv = car.has_reserv;
         }
         this.#savels();
         return p;
@@ -46,6 +47,13 @@ export class CarRepo {
     findById(id) {
         for (var car of this.#cardb) {
             if (car.id === id)
+                return car;
+        }
+        return null;
+    }
+    findByLicensePlate(plate) {
+        for (var car of this.#cardb) {
+            if (car.plate === plate)
                 return car;
         }
         return null;

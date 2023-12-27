@@ -10,6 +10,7 @@
         <script src="/Resources/lib/jquery/jquery-3.7.1.min.js"></script>
         <script type="module" src="/ViewModels/index.js"></script>
         <script src="/Resources/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="module" src="initdb.js"></script>
     </head>
     <body>
       <nav class="navbar fixed-top navbar-expand-lg bg-primary">
@@ -19,7 +20,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <span class="navbar-text">
-              <a class="nav-link" id="user" href="#"></a>
+              <a class="nav-link" id="user" href="/login.html"></a>
           </span>
         </div>
       </nav>
@@ -27,35 +28,25 @@
         <div class="row justify-content-center">
           <div class="col-3">
             <div class="row options-bar">
+              <div class="col-11 card p-3 mb-3" data-for="company" hidden>
+                <h5 class="ps-3"><i class="fa fa-square-parking"></i> My parks</h5>
+                <div class="list-group list-group-flush" id="my_parks_list">
+                  <a href="/addpark.html" class="list-group-item list-group-item-action"><i class="fa fa-plus"></i> Add new park</a>
+                </div>
+              </div>
               <div class="col-11 card p-3 mb-3">
                 <h5 class="ps-3"><i class="fa fa-car"></i> My cars</h5>
-                <div class="list-group list-group-flush">
-                  <a href="#" class="list-group-item list-group-item-action">
-                    Toyota Corola 2006, 42-11-AE
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action">
-                    Citröen ZX 1991, 45-36-GA
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-plus"></i> Add new car</a>
+                <div class="list-group list-group-flush" id="cars_list">
+                  <a href="/addcar.html" class="list-group-item list-group-item-action"><i class="fa fa-plus"></i> Add new car</a>
                 </div>
               </div>
               <div class="col-11 card p-3 mb-3">
                 <h5 class="ps-3"><i class="far fa-calendar"></i> Active Reservations</h5>
-                <div class="list-group list-group-flush">
-                  <a href="#" class="list-group-item list-group-item-action">
-                    
-                  </a>
-                  
-                </div>
+                <div class="list-group list-group-flush" id="reservs_list"></div>
               </div>
               <div class="col-11 card p-3 mb-3">
                 <h5 class="ps-3"><i class="fa fa-credit-card-alt"></i> Pending Payments</h5>
-                <div class="list-group list-group-flush">
-                  <a href="#" class="list-group-item list-group-item-action">
-                    
-                  </a>
-                  
-                </div>
+                <div class="list-group list-group-flush" id="pays_list"></div>
               </div>
             </div>
           </div>
@@ -68,23 +59,7 @@
                 </div>
               </div>
             </div>
-            <div class="row mt-3" id="park_list">
-              <div class="row mt-3">
-                <div class="col-11 card park" name="0">
-                  <button type="button" class="btn fav-icon"><i class="far fa-heart"></i></button>
-                  <img src="Resources/Images/glici.jpg" />
-                  <div class="row p-3">
-                    <div class="col-auto">
-                      <h2>Glicínias Plaza</h2>
-                      <h4>Aveiro, Aveiro</h4>
-                    </div>
-                    <div class="col text-end">
-                      <p class="mt-3">Capacity<br>73/250</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="row mt-3" id="parks_list"></div>
           </div>
         </div>
       </div>

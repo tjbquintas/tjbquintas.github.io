@@ -7,7 +7,8 @@ export class CarService {
         this.#carRepo = new CarRepo();
     }
     createCar(car : Car) : Car | null {
-        return this.#carRepo.create(car);
+        if (this.isLicensePlateAvailable(car.plate ?? "")) return this.#carRepo.create(car);
+        return null;
     }
     updateCar(car : Car) : Car {
         return this.#carRepo.update(car);
@@ -21,10 +22,16 @@ export class CarService {
     getAllCars() {
         return this.#carRepo.findAll();
     }
-    getCarById(id : Number) : Car | null {
+    getCarById(id : number) : Car | null {
         return this.#carRepo.findById(id);
     }
-    getAllCarsByUserId(user_id : Number) : Array<Car> {
+    getCarByLicensePlate(plate : string) : Car | null {
+        return this.#carRepo.findByLicensePlate(plate);
+    }
+    getAllCarsByUserId(user_id : number) : Array<Car> {
         return this.#carRepo.findAllByUserId(user_id);
+    }
+    isLicensePlateAvailable(plate : string) : boolean {
+        return plate != "" && this.#carRepo.findByLicensePlate(plate) == null;
     }
 };

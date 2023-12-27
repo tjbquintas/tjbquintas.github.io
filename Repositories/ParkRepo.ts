@@ -14,7 +14,7 @@ export class ParkRepo {
         var jsondb = JSON.parse(db);
         this.#parkdb = []
         for (var line of jsondb) {
-            this.#parkdb.push(new Park(line.id, line.name, line.address, line.spots, line.user_id))
+            this.#parkdb.push(new Park(line.id, line.name, line.image, line.address, line.spots, line.user_id))
         }
     }
     #savels() {
@@ -41,7 +41,7 @@ export class ParkRepo {
     delete(park : Park) : void {
         this.#parkdb = this.#parkdb.filter(p => p.id !== park.id);
     }
-    findById(id : Number) : Park | null {
+    findById(id : number) : Park | null {
         for (var park of this.#parkdb) {
             if (park.id === id) return park;
         }
@@ -56,7 +56,7 @@ export class ParkRepo {
         }
         return null;
     }
-    findAllByUserId(user_id : Number) : Array<Park> {
+    findAllByUserId(user_id : number) : Array<Park> {
         return this.#parkdb.filter(park => park.user_id === user_id);
     }
 }

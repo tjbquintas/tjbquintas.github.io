@@ -15,7 +15,7 @@ export class ParkRepo {
         var jsondb = JSON.parse(db);
         this.#parkdb = [];
         for (var line of jsondb) {
-            this.#parkdb.push(new Park(line.id, line.name, line.address, line.spots, line.user_id));
+            this.#parkdb.push(new Park(line.id, line.name, line.image, line.address, line.spots, line.user_id));
         }
     }
     #savels() {

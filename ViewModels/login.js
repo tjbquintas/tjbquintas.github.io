@@ -1,6 +1,7 @@
 import { User } from "../Model/User.js";
 import { UserService } from "../Services/UserService.js";
 $().ready(function () {
+    sessionStorage.removeItem("logged");
     const userService = new UserService();
     $("button").on("click", function () {
         var user = new User();

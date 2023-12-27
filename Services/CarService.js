@@ -5,7 +5,9 @@ export class CarService {
         this.#carRepo = new CarRepo();
     }
     createCar(car) {
-        return this.#carRepo.create(car);
+        if (this.isLicensePlateAvailable(car.plate ?? ""))
+            return this.#carRepo.create(car);
+        return null;
     }
     updateCar(car) {
         return this.#carRepo.update(car);
@@ -22,8 +24,14 @@ export class CarService {
     getCarById(id) {
         return this.#carRepo.findById(id);
     }
+    getCarByLicensePlate(plate) {
+        return this.#carRepo.findByLicensePlate(plate);
+    }
     getAllCarsByUserId(user_id) {
         return this.#carRepo.findAllByUserId(user_id);
+    }
+    isLicensePlateAvailable(plate) {
+        return plate != "" && this.#carRepo.findByLicensePlate(plate) == null;
     }
 }
 ;
